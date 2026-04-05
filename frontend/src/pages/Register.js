@@ -23,8 +23,9 @@ function Register() {
 
       navigate('/')
 
-    } catch (err) {
-      setError(err.response.data.message)
+   } catch (err) {
+  console.log(err)
+  setError(err.response ? err.response.data.message : 'Server error - please try again')
     }
   }
 
