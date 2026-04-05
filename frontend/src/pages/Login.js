@@ -16,7 +16,7 @@ function Login() {
     setError('')
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', {
+      const res = await axios.post('https://review-app-backendd.onrender.com/api/auth/login', {
         email, password
       })
 
@@ -25,7 +25,7 @@ function Login() {
       navigate('/')
 
     } catch (err) {
-      setError(err.response ? err.response.data.message : 'Server is starting up, please try again in a few seconds!')
+      setError('Server is starting up, please wait 30 seconds and try again!')
     } finally {
       setLoading(false)
     }
